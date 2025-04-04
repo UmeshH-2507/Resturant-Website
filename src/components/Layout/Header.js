@@ -6,89 +6,99 @@ import {
   Drawer,
   IconButton,
   Toolbar,
-  Typography,
 } from "@mui/material";
-import Logo from "../../images/logo.svg";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
+import Logo from "../../images/logo.svg";
 import "../../styles/HeaderStyles.css";
+
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  // hndle menu click
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  //menu drawer
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography
-        color={"goldenrod"}
-        variant="h6"
-        component="div"
-        sx={{ flexGrow: 1, my: 2 }}
-      >
-        <img src={Logo} alt="logo" height={"70"} width="200" />
-      </Typography>
+      <Box sx={{ my: 2 }}>
+        <img src={Logo} alt="logo" height="70" width="200" />
+      </Box>
       <Divider />
       <ul className="mobile-navigation">
         <li>
-          <NavLink activeClassName="active" to={"/"}>
+          <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/menu"}>Menu</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/menu">
+            Menu
+          </NavLink>
         </li>
         <li>
-          <NavLink to={"/about"}>About</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/about">
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to={"/contact"}>Contact</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/contact">
+            Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/cart">
+            Cart
+          </NavLink>
         </li>
       </ul>
     </Box>
   );
+
   return (
     <>
       <Box>
-        <AppBar component={"nav"} sx={{ bgcolor: "black" }}>
+        <AppBar component="nav" sx={{ bgcolor: "black" }}>
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              sx={{
-                mr: 2,
-                display: { sm: "none" },
-              }}
+              sx={{ mr: 2, display: { sm: "none" } }}
               onClick={handleDrawerToggle}
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              color={"goldenrod"}
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
-            >
-              <img src={Logo} alt="logo" height={"70"} width="250" />
-            </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+              <img src={Logo} alt="logo" height="70" width="250" />
+            </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <ul className="navigation-menu">
                 <li>
-                  <NavLink activeClassName="active" to={"/"}>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/">
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/menu"}>Menu</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/menu">
+                    Menu
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/about"}>About</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/about">
+                    About
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/contact"}>Contact</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/contact">
+                    Contact
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/cart">
+                    Orders
+                  </NavLink>
+
                 </li>
               </ul>
             </Box>
@@ -101,18 +111,13 @@ const Header = () => {
             onClose={handleDrawerToggle}
             sx={{
               display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: "240px",
-              },
+              "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
             }}
           >
             {drawer}
           </Drawer>
         </Box>
-        <Box>
-          <Toolbar />
-        </Box>
+        <Toolbar />
       </Box>
     </>
   );

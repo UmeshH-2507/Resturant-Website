@@ -25,6 +25,7 @@ const Footer = () => {
             },
           }}
         >
+          
           {/* icons */}
           <InstagramIcon />
           <TwitterIcon />
@@ -39,7 +40,7 @@ const Footer = () => {
             },
           }}
         >
-          All Rights Reserved &copy; Techinfo YT
+          UMESH HIREMATH
         </Typography>
       </Box>
     </>
