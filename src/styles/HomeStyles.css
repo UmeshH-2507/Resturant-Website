@@ -50,7 +50,7 @@
   transition: 0.3s ease-in;
 }
 
-/* mobile view  */
+/* mobile views   */
 
 @media only screen and (max-width: 600px) {
   .home {

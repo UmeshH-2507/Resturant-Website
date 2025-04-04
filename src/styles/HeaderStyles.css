@@ -1,29 +1,46 @@
+/* Desktop Navigation */
 .navigation-menu {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
 }
-.navigation-menu li {
-  margin: 0px 20px;
-}
+
 .navigation-menu li a {
   text-decoration: none;
   color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
+
+.navigation-menu li a:hover {
+  color: goldenrod;
+}
+
 .active {
   color: goldenrod !important;
   font-weight: bold !important;
 }
-/* mobile view */
+
+/* Mobile Navigation */
 .mobile-navigation {
   list-style: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
-.mobile-navigation li {
-  margin-top: 20px;
-}
+
 .mobile-navigation li a {
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: black;
+  transition: color 0.3s ease;
+}
+
+.mobile-navigation li a:hover {
+  color: goldenrod;
 }

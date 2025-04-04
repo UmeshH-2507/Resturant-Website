@@ -4,7 +4,7 @@ import Header from "./Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      <Header id = ""/>
       <div>{children}</div>
       <Footer />
     </>
